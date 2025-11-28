@@ -61,12 +61,12 @@ const Home: React.FC = () => {
 
   // Live Feed Images
   const feedImages = [
-    'https://images.unsplash.com/photo-1546519638-68e109498ffc?auto=format&fit=crop&q=80&w=300&h=300',
-    'https://images.unsplash.com/photo-1519861531473-920026393112?auto=format&fit=crop&q=80&w=300&h=300',
-    'https://images.unsplash.com/photo-1504450758481-7338eba7524a?auto=format&fit=crop&q=80&w=300&h=300',
-    'https://images.unsplash.com/photo-1574629810360-7efbbe195018?auto=format&fit=crop&q=80&w=300&h=300',
-    'https://images.unsplash.com/photo-1628779238951-bd5c958e3e60?auto=format&fit=crop&q=80&w=300&h=300',
-    'https://images.unsplash.com/photo-1533561052604-c3beb6d55760?auto=format&fit=crop&q=80&w=300&h=300',
+    'https://images.unsplash.com/photo-1546519638-68e109498ffc?auto=format&fit=crop&w=400&q=80', // Hoop
+    'https://images.unsplash.com/photo-1504450758481-7338eba7524a?auto=format&fit=crop&w=400&q=80', // Court
+    'https://images.unsplash.com/photo-1519861531473-920026393112?auto=format&fit=crop&w=400&q=80', // Action
+    'https://images.unsplash.com/photo-1518063319789-7217e6706b04?auto=format&fit=crop&w=400&q=80', // Ball
+    'https://images.unsplash.com/photo-1608245449230-4ac19066d2d0?auto=format&fit=crop&w=400&q=80', // Game
+    'https://images.unsplash.com/photo-1577471488278-16eec37ffcc2?auto=format&fit=crop&w=400&q=80', // Street
   ];
 
   return (
