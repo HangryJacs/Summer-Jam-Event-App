@@ -151,6 +151,8 @@ const FootLockerForm: React.FC = () => {
                 max="50"
                 value={formData.sneakerCount}
                 onChange={(e) => setFormData({ ...formData, sneakerCount: parseInt(e.target.value) })}
+                onTouchEnd={() => setTimeout(handleNext, 500)}
+                onMouseUp={() => setTimeout(handleNext, 500)}
                 className="w-full h-2 bg-gray-700 rounded-lg appearance-none cursor-pointer accent-[#FF7812]"
               />
               <div className="flex justify-between text-xs font-bold uppercase text-gray-500 mt-2">
