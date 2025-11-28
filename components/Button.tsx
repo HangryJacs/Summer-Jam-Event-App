@@ -1,5 +1,6 @@
 import React from 'react';
 import toast from 'react-hot-toast';
+import { Lock } from 'lucide-react';
 
 interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   variant?: 'primary' | 'secondary' | 'outline' | 'ghost';
@@ -28,17 +29,19 @@ const Button: React.FC<ButtonProps> = ({
   const handleClick = (e: React.MouseEvent<HTMLButtonElement>) => {
     if (requiresFullVersion) {
       e.preventDefault();
-      toast('Activate full version', {
-        icon: '🔒',
+      toast('Available in full version', {
+        icon: <Lock size={16} className="text-[#FFD700]" />,
         style: {
-          borderRadius: '10px',
-          background: '#333',
+          borderRadius: '8px',
+          background: '#1F1F1F',
           color: '#fff',
-          border: '1px solid #FF4C29',
-          fontSize: '12px',
-          fontWeight: 'bold',
-          textTransform: 'uppercase'
+          border: '1px solid #333',
+          fontSize: '13px',
+          fontWeight: '600',
+          padding: '8px 12px',
+          boxShadow: '0 4px 12px rgba(0,0,0,0.5)'
         },
+        duration: 2000,
       });
       return;
     }
