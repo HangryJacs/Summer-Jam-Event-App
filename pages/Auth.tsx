@@ -180,7 +180,7 @@ const Auth: React.FC<AuthProps> = ({ onLogin }) => {
   );
 
   return (
-    <div className="min-h-screen bg-[#0A0A0A] relative overflow-x-hidden flex flex-col items-center justify-center py-12 px-4">
+    <div className="min-h-[100dvh] bg-[#0A0A0A] relative overflow-x-hidden flex flex-col items-center justify-center p-4">
         {/* Background Gradients - Adjusted for subtler look */}
         <div className="fixed inset-0 pointer-events-none z-0">
              <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[100vw] h-[60vh] bg-gradient-to-b from-[#111] to-[#0A0A0A]"></div>
@@ -188,11 +188,11 @@ const Auth: React.FC<AuthProps> = ({ onLogin }) => {
              <div className="absolute bottom-[-10%] left-[-10%] w-[50vw] h-[50vw] bg-[#365CAB] rounded-full blur-[150px] opacity-[0.08]"></div>
         </div>
 
-        <div className="w-full max-w-md relative z-10 pt-12 pt-safe">
+        <div className="w-full max-w-md relative z-10">
             {/* Header */}
-            <div className="text-center mb-10">
-                <h2 className="text-4xl font-black italic uppercase text-white mb-2 tracking-tight">Access Pass</h2>
-                <p className="text-gray-400 text-sm">Join the championship. Earn entries. Win.</p>
+            <div className="text-center mb-6">
+                <h2 className="text-3xl font-black italic uppercase text-white mb-1 tracking-tight">Access Pass</h2>
+                <p className="text-gray-400 text-xs">Join the championship. Earn entries. Win.</p>
             </div>
 
             {/* Main Card */}
@@ -371,7 +371,7 @@ const Auth: React.FC<AuthProps> = ({ onLogin }) => {
                 </div>
             </div>
 
-            <p className="text-[10px] text-center text-gray-600 mt-8 px-8">
+            <p className="text-[10px] text-center text-gray-600 mt-4 px-8">
                 By entering the jam, you agree to our Terms of Service.
             </p>
             <p className="text-[10px] text-center text-gray-600 mt-2 font-mono tracking-widest uppercase">
