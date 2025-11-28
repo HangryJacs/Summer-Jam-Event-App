@@ -139,11 +139,11 @@ const Schedule: React.FC = () => {
       {/* 2. Schedule List */}
       <div className="px-4 py-6 space-y-8">
         {Object.entries(groupedEvents).map(([date, events]) => (
-          <div key={date} className="animate-in fade-in slide-in-from-bottom-4 duration-500">
+          <div key={date} className="">
             {/* Date Header */}
             <button 
                 onClick={() => toggleDate(date)}
-                className="w-full flex items-center justify-between mb-4 group"
+                className="w-full flex items-center justify-between mb-4 group relative z-10"
             >
                 <div className="flex items-center gap-2">
                     <CalendarIcon size={18} className="text-[#FFA605]" />
