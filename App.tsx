@@ -66,9 +66,10 @@ const MainLayout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   return (
     <ResponsiveContainer 
       hasNav={!isFullScreenPage} 
-      hasHeader={!isFullScreenPage} 
+      hasHeader={!isFullScreenPage}
+      className={isFullScreenPage ? '!h-[100dvh] !overflow-hidden' : ''}
     >
-      <div className="flex flex-col min-h-screen text-white relative bg-[#0A0A0A]">
+      <div className={`flex flex-col text-white relative bg-[#0A0A0A] ${isFullScreenPage ? 'h-full' : 'min-h-[100dvh]'}`}>
         {!isFullScreenPage && <Header user={user} />}
         
         <main className="flex-grow w-full">
