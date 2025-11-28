@@ -21,7 +21,7 @@ const PRIZES: Prize[] = [
     id: '1',
     title: 'Signed Game Ball',
     description: 'Official Summer Jam game ball signed by special guest Cam Wilder.',
-    image: 'https://images.unsplash.com/photo-1519861531473-920026393112?auto=format&fit=crop&q=80&w=600',
+    image: 'https://images.unsplash.com/photo-1574623452334-1e0ac2b3ccb4?auto=format&fit=crop&q=80&w=600',
     value: '$Priceless',
     drawDate: 'Feb 22'
   },
