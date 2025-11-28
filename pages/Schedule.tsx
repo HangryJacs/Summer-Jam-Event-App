@@ -90,14 +90,16 @@ const Schedule: React.FC = () => {
     selectedCity === 'All' || item.city === selectedCity
   );
 
-  // Group by Date
+  // Group by Date (Array to preserve order)
   const groupedEvents = filteredEvents.reduce((acc, item) => {
-    if (!acc[item.date]) {
-      acc[item.date] = [];
+    const existingGroup = acc.find(g => g.date === item.date);
+    if (existingGroup) {
+      existingGroup.events.push(item);
+    } else {
+      acc.push({ date: item.date, events: [item] });
     }
-    acc[item.date].push(item);
     return acc;
-  }, {} as Record<string, ScheduleItem[]>);
+  }, [] as { date: string, events: ScheduleItem[] }[]);
 
   // Get event type icon/color
   const getEventStyle = (type: EventType) => {
@@ -138,21 +140,23 @@ const Schedule: React.FC = () => {
 
       {/* 2. Schedule List */}
       <div className="px-4 py-6 space-y-8">
-        {Object.entries(groupedEvents).map(([date, events]) => (
+        {groupedEvents.map(({ date, events }) => (
           <div key={date} className="">
             {/* Date Header */}
-            <button 
-                onClick={() => toggleDate(date)}
-                className="w-full flex items-center justify-between mb-4 group relative z-10"
-            >
-                <div className="flex items-center gap-2">
-                    <CalendarIcon size={18} className="text-[#FFA605]" />
-                    <h2 className="text-lg font-black italic uppercase text-white group-hover:text-[#FFA605] transition-colors">{date}</h2>
-                </div>
-                <div className={`p-1 rounded-full bg-white/5 transition-transform ${expandedDates[date] ? 'rotate-180' : ''}`}>
-                    <ChevronDown size={16} className="text-gray-400" />
-                </div>
-            </button>
+            <div className="sticky top-[130px] z-20 bg-[#0A0A0A] py-2 -mx-4 px-4 mb-2 border-b border-white/5 shadow-lg">
+                <button 
+                    onClick={() => toggleDate(date)}
+                    className="w-full flex items-center justify-between group"
+                >
+                    <div className="flex items-center gap-2">
+                        <CalendarIcon size={18} className="text-[#FFA605]" />
+                        <h2 className="text-lg font-black italic uppercase text-white group-hover:text-[#FFA605] transition-colors">{date}</h2>
+                    </div>
+                    <div className={`p-1 rounded-full bg-white/5 transition-transform ${expandedDates[date] ? 'rotate-180' : ''}`}>
+                        <ChevronDown size={16} className="text-gray-400" />
+                    </div>
+                </button>
+            </div>
 
             {/* Events Timeline */}
             <div className={`
@@ -234,7 +238,7 @@ const Schedule: React.FC = () => {
         ))}
         
         {/* Empty State */}
-        {Object.keys(groupedEvents).length === 0 && (
+        {groupedEvents.length === 0 && (
             <div className="text-center py-12">
                 <p className="text-gray-500 font-bold uppercase">No events found for {selectedCity}</p>
                 <button 
