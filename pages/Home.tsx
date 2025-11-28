@@ -63,7 +63,7 @@ const Home: React.FC = () => {
   const feedImages = [
     'https://images.unsplash.com/photo-1546519638-68e109498ffc?auto=format&fit=crop&w=400&q=80', // Hoop
     'https://images.unsplash.com/photo-1504450758481-7338eba7524a?auto=format&fit=crop&w=400&q=80', // Court
-    'https://images.unsplash.com/photo-1519766304800-c9519d22b8e3?auto=format&fit=crop&w=400&q=80', // Action
+    'https://images.unsplash.com/photo-1533561052604-c3be19ad9607?auto=format&fit=crop&w=400&q=80', // Action
     'https://images.unsplash.com/photo-1518063319789-7217e6706b04?auto=format&fit=crop&w=400&q=80', // Ball
     'https://images.unsplash.com/photo-1608245449230-4ac19066d2d0?auto=format&fit=crop&w=400&q=80', // Game
     'https://images.unsplash.com/photo-1577471488278-16eec37ffcc2?auto=format&fit=crop&w=400&q=80', // Street
