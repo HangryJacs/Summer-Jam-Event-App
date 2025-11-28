@@ -58,18 +58,30 @@ const MainLayout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
     ROUTES.SCANNER,
     '/dev'
   ];
+
+  // Define which paths should be strictly fixed height (no scroll)
+  // Splash: Needs to be fixed to prevent address bar scroll issues
+  // Scanner: Needs to be fixed for camera view
+  // Forms: Have their own internal scrolling logic
+  const fixedHeightPaths = [
+    ROUTES.SPLASH,
+    ROUTES.SCANNER
+  ];
   
   // Forms are also full screen usually
   const isForm = location.pathname.startsWith('/form');
   const isFullScreenPage = fullScreenPaths.includes(location.pathname) || isForm;
+  
+  // Only apply fixed height clipping to specific pages
+  const shouldClipHeight = fixedHeightPaths.includes(location.pathname) || isForm;
 
   return (
     <ResponsiveContainer 
       hasNav={!isFullScreenPage} 
       hasHeader={!isFullScreenPage}
-      className={isFullScreenPage ? '!h-[100dvh] !overflow-hidden' : ''}
+      className={shouldClipHeight ? '!h-[100dvh] !overflow-hidden' : ''}
     >
-      <div className={`flex flex-col text-white relative bg-[#0A0A0A] ${isFullScreenPage ? 'h-full' : 'min-h-[100dvh]'}`}>
+      <div className={`flex flex-col text-white relative bg-[#0A0A0A] ${shouldClipHeight ? 'h-full' : 'min-h-[100dvh]'}`}>
         {!isFullScreenPage && <Header user={user} />}
         
         <main className="flex-grow w-full">
