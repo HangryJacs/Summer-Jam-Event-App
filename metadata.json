@@ -1,0 +1,8 @@
+{
+  "name": "Summer Jam 2026",
+  "description": "Official mobile companion for Summer Jam 2026 - The ultimate street basketball championship. Collect badges, unlock drops, and keep your cool.",
+  "requestFramePermissions": [
+    "camera",
+    "geolocation"
+  ]
+}

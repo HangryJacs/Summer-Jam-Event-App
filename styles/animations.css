@@ -1,0 +1,138 @@
+
+/* -------------------------------------------------------------------------- */
+/*                                 KEYFRAMES                                  */
+/* -------------------------------------------------------------------------- */
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes fadeOut {
+  from { opacity: 1; }
+  to { opacity: 0; }
+}
+
+@keyframes slideInRight {
+  from { transform: translateX(20px); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes slideInUp {
+  from { transform: translateY(20px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes scaleIn {
+  from { transform: scale(0.95); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 0 5px rgba(255, 120, 18, 0.2); }
+  50% { box-shadow: 0 0 15px rgba(255, 120, 18, 0.6); }
+}
+
+@keyframes heat-wave {
+  0% { transform: translateY(0) scaleY(1); opacity: 0.8; }
+  50% { transform: translateY(-5px) scaleY(1.05); opacity: 0.5; }
+  100% { transform: translateY(-10px) scaleY(1); opacity: 0; }
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-4px); }
+  75% { transform: translateX(4px); }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+
+/* -------------------------------------------------------------------------- */
+/*                                UTILITIES                                   */
+/* -------------------------------------------------------------------------- */
+
+/* Page Transitions */
+.page-enter {
+  animation: fadeIn 0.4s ease-out forwards;
+}
+
+.page-enter-slide {
+  animation: slideInRight 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.page-enter-up {
+  animation: slideInUp 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Micro-interactions */
+.active-scale:active {
+  transform: scale(0.96);
+  transition: transform 0.1s;
+}
+
+.hover-lift {
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.hover-lift:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+.input-glow:focus {
+  box-shadow: 0 0 0 2px rgba(255, 120, 18, 0.5);
+  transition: box-shadow 0.2s;
+}
+
+/* Loading States */
+.skeleton {
+  background: linear-gradient(90deg, #1A1A1A 25%, #252525 50%, #1A1A1A 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite linear;
+  border-radius: 4px;
+}
+
+.animate-pulse-slow {
+  animation: pulse-glow 3s infinite;
+}
+
+/* Special Effects */
+.heat-text {
+  background: linear-gradient(to right, #FF7812, #FFA605, #FF4C29);
+  -webkit-background-clip: text;
+  color: transparent;
+  background-size: 200% auto;
+  animation: shimmer 3s linear infinite;
+}
+
+.glass-panel {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* Staggered Children Delays */
+.stagger-1 { animation-delay: 50ms; }
+.stagger-2 { animation-delay: 100ms; }
+.stagger-3 { animation-delay: 150ms; }
+.stagger-4 { animation-delay: 200ms; }
+.stagger-5 { animation-delay: 250ms; }
+
+/* Custom Scrollbar override for polish */
+.custom-scroll::-webkit-scrollbar {
+  width: 4px;
+}
+.custom-scroll::-webkit-scrollbar-track {
+  background: transparent;
+}
+.custom-scroll::-webkit-scrollbar-thumb {
+  background: #333;
+  border-radius: 2px;
+}
