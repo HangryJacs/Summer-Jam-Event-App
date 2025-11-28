@@ -143,16 +143,16 @@ const Schedule: React.FC = () => {
         {groupedEvents.map(({ date, events }) => (
           <div key={date} className="">
             {/* Date Header */}
-            <div className="sticky top-[130px] z-20 bg-[#0A0A0A] py-2 -mx-4 px-4 mb-2 border-b border-white/5 shadow-lg">
+            <div className="bg-[#0A0A0A] py-4 mb-2 border-b border-white/10">
                 <button 
                     onClick={() => toggleDate(date)}
                     className="w-full flex items-center justify-between group"
                 >
-                    <div className="flex items-center gap-2">
-                        <CalendarIcon size={18} className="text-[#FFA605]" />
-                        <h2 className="text-lg font-black italic uppercase text-white group-hover:text-[#FFA605] transition-colors">{date}</h2>
+                    <div className="flex items-center gap-3">
+                        <CalendarIcon size={20} className="text-[#FFA605]" />
+                        <h2 className="text-xl font-black italic uppercase text-white group-hover:text-[#FFA605] transition-colors tracking-wide">{date}</h2>
                     </div>
-                    <div className={`p-1 rounded-full bg-white/5 transition-transform ${expandedDates[date] ? 'rotate-180' : ''}`}>
+                    <div className={`p-2 rounded-full bg-white/5 transition-transform ${expandedDates[date] ? 'rotate-180' : ''}`}>
                         <ChevronDown size={16} className="text-gray-400" />
                     </div>
                 </button>
