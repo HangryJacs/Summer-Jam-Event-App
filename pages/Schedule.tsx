@@ -22,7 +22,7 @@ interface ScheduleItem {
 const SCHEDULE_DATA: ScheduleItem[] = [
   // BRISBANE (Jan 18)
   { id: 'bne-1', city: 'Brisbane', date: 'Saturday, Jan 18', time: '09:00', title: 'Player Registration', location: 'UQ Centre Entrance', type: 'registration' },
-  { id: 'bne-2', city: 'Brisbane', date: 'Saturday, Jan 18', time: '10:30', title: 'U18 Round Robin', location: 'Courts 1-3', type: 'game' },
+  { id: 'bne-2', city: 'Brisbane', date: 'Saturday, Jan 18', time: '10:30', title: 'U18 Round Robin', location: 'Courts 1-3', type: 'game', isLive: true },
   { id: 'bne-3', city: 'Brisbane', date: 'Saturday, Jan 18', time: '13:00', title: 'Open Mens Heats', location: 'Main Court', type: 'game' },
   { id: 'bne-4', city: 'Brisbane', date: 'Saturday, Jan 18', time: '16:00', title: 'Brisbane Finals', location: 'Showcourt', type: 'game' },
 
