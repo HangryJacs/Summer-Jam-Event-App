@@ -13,6 +13,14 @@ const Activations: React.FC<ActivationsProps> = ({ activations }) => {
   const completedCount = activations.filter(a => a.completed).length;
   const progress = (completedCount / activations.length) * 100;
 
+  const getStatusLabel = (p: number) => {
+    if (p === 100) return 'LEGEND';
+    if (p >= 75) return 'MVP';
+    if (p >= 50) return 'ALL-STAR';
+    if (p >= 25) return 'PROSPECT';
+    return 'ROOKIE';
+  };
+
   return (
     <div className="min-h-screen px-4 py-6 pb-24 space-y-8">
       
@@ -31,7 +39,7 @@ const Activations: React.FC<ActivationsProps> = ({ activations }) => {
           </div>
           <div className="text-right">
              <div className="text-[#FFA605] font-bold uppercase text-xs tracking-wider">Current Status</div>
-             <div className="text-xl font-bold italic">{progress === 100 ? 'LEGEND' : 'ROOKIE'}</div>
+             <div className="text-xl font-bold italic">{getStatusLabel(progress)}</div>
           </div>
         </div>
         
