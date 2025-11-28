@@ -38,16 +38,11 @@ const Header: React.FC<HeaderProps> = ({ user }) => {
 
       {/* Profile Avatar */}
       {user && (
-        <div className="flex items-center gap-3">
-           <div className="bg-[#FF4C29] text-white text-[8px] font-black uppercase px-2 py-1 rounded shadow-lg pointer-events-none">
-              Demo Mode
+        <Link to="/profile">
+           <div className="h-8 w-8 rounded-full bg-white/10 border border-white/20 flex items-center justify-center text-xs font-bold text-white backdrop-blur-md shadow-inner hover:bg-white/20 transition-all hover:scale-105 active:scale-95">
+              {user.name.charAt(0).toUpperCase()}
            </div>
-           <Link to="/profile">
-              <div className="h-8 w-8 rounded-full bg-white/10 border border-white/20 flex items-center justify-center text-xs font-bold text-white backdrop-blur-md shadow-inner hover:bg-white/20 transition-all hover:scale-105 active:scale-95">
-                  {user.name.charAt(0).toUpperCase()}
-              </div>
-           </Link>
-        </div>
+        </Link>
       )}
     </header>
   );
