@@ -12,8 +12,8 @@ const Home: React.FC = () => {
   const [userEntries, setUserEntries] = useState(0);
 
   useEffect(() => {
-    // Target: Feb 20, 2026
-    const targetDate = new Date('2026-02-20T09:00:00').getTime();
+    // Target: Jan 18, 2026 (Brisbane)
+    const targetDate = new Date('2026-01-18T09:00:00').getTime();
 
     const interval = setInterval(() => {
       const now = new Date().getTime();
@@ -83,7 +83,7 @@ const Home: React.FC = () => {
         <div className="relative z-10 w-full">
            <div className="flex items-center gap-2 mb-2">
               <div className="w-2 h-2 bg-[#FF4C29] rounded-full animate-pulse"></div>
-              <span className="text-xs font-bold uppercase tracking-[0.2em] text-[#FFA605]">Next Stop: Melbourne</span>
+              <span className="text-xs font-bold uppercase tracking-[0.2em] text-[#FFA605]">Next Stop: Brisbane</span>
            </div>
            
            <h1 className="text-5xl font-black italic uppercase leading-[0.9] text-white mb-6">
@@ -116,7 +116,7 @@ const Home: React.FC = () => {
       <section className="px-4">
         <Link to="/prizes">
           <Card gradientBorder className="relative overflow-hidden group transition-all active:scale-95">
-            <div className="flex justify-between items-center mb-4 relative z-10">
+            <div className="flex justify-between items-center mb-4 relative z-10 mt-6">
                 <div>
                   <h3 className="text-sm font-bold uppercase text-gray-400">Total Entries</h3>
                   <div className="text-4xl font-black italic text-white leading-none">{userEntries}</div>
