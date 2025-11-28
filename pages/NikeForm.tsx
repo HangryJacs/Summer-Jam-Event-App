@@ -2,11 +2,12 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { ChevronLeft, Star } from 'lucide-react';
 import Button from '../components/Button';
-import { UserData } from '../types';
+import { useUser } from '../context/UserContext';
 import SuccessAnimation from '../components/SuccessAnimation';
 
 const NikeForm: React.FC = () => {
   const navigate = useNavigate();
+  const { user, addEntries, markActivationCompleted } = useUser();
   const [currentStep, setCurrentStep] = useState(0);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [showSuccess, setShowSuccess] = useState(false);
@@ -54,19 +55,16 @@ const NikeForm: React.FC = () => {
     
     // Simulate API call and LocalStorage update
     setTimeout(() => {
-      const storedUser = localStorage.getItem('summerjam_user');
-      let newTotal = 0;
+      // Update entries
+      addEntries(10);
+      
+      // Mark activation as completed
+      markActivationCompleted('nike');
 
-      if (storedUser) {
-        const user: UserData = JSON.parse(storedUser);
-        const currentEntries = (user as any).entries || 0;
-        newTotal = currentEntries + 10;
-        const updatedUser = { ...user, entries: newTotal };
-        localStorage.setItem('summerjam_user', JSON.stringify(updatedUser));
-        window.dispatchEvent(new Event('storage'));
-      }
-
-      setTotalEntries(newTotal);
+      // Calculate new total for display
+      const currentEntries = (user as any)?.entries || 0;
+      setTotalEntries(currentEntries + 10);
+      
       setIsSubmitting(false);
       setShowSuccess(true);
     }, 1500);
