@@ -106,7 +106,7 @@ const Home: React.FC = () => {
               ))}
            </div>
 
-           <Button fullWidth className="flex items-center justify-center gap-2 text-sm py-3">
+           <Button fullWidth requiresFullVersion className="flex items-center justify-center gap-2 text-sm py-3">
               <Play size={16} fill="currentColor" /> Watch Live Stream
            </Button>
         </div>
@@ -202,7 +202,7 @@ const Home: React.FC = () => {
                </div>
             ))}
          </div>
-         <Button variant="ghost" fullWidth className="mt-4 text-xs">View Full Gallery</Button>
+         <Button variant="ghost" fullWidth requiresFullVersion className="mt-4 text-xs">View Full Gallery</Button>
       </section>
 
     </div>

@@ -81,6 +81,11 @@ const MainLayout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
       hasHeader={!isFullScreenPage}
       className={shouldClipHeight ? '!h-[100dvh] !overflow-hidden' : ''}
     >
+      {/* Demo Tag */}
+      <div className="fixed top-0 left-1/2 -translate-x-1/2 z-[100] bg-[#FF4C29] text-white text-[8px] font-black uppercase px-3 py-1 rounded-b-lg shadow-lg pointer-events-none">
+        Demo Mode
+      </div>
+
       <div className={`flex flex-col text-white relative bg-[#0A0A0A] ${shouldClipHeight ? 'h-full' : 'min-h-[100dvh]'}`}>
         {!isFullScreenPage && <Header user={user} />}
         
