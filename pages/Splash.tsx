@@ -56,6 +56,9 @@ const Splash: React.FC = () => {
           <div className="text-[10px] text-gray-500 font-mono tracking-widest uppercase">
             Official Mobile Companion
           </div>
+          <div className="text-[10px] text-gray-600 font-mono tracking-widest uppercase mt-2">
+            Powered by ThinkSwift
+          </div>
         </div>
       </div>
       

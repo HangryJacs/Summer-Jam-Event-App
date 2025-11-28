@@ -154,6 +154,9 @@ const About: React.FC = () => {
            <div className="text-[10px] text-gray-600 font-mono">
               © 2026 Summer Jam Australia. All rights reserved.
            </div>
+           <div className="text-[10px] text-gray-600 font-mono tracking-widest uppercase">
+              Powered by ThinkSwift
+           </div>
         </footer>
 
       </div>

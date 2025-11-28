@@ -103,6 +103,12 @@ const Profile: React.FC<ProfileProps> = ({ user, activations, onLogout }) => {
         </Button>
       </div>
 
+      <div className="text-center pt-4 pb-2">
+        <p className="text-[10px] text-gray-600 font-mono tracking-widest uppercase">
+          Powered by ThinkSwift
+        </p>
+      </div>
+
     </div>
   );
 };

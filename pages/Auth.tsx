@@ -374,6 +374,9 @@ const Auth: React.FC<AuthProps> = ({ onLogin }) => {
             <p className="text-[10px] text-center text-gray-600 mt-8 px-8">
                 By entering the jam, you agree to our Terms of Service.
             </p>
+            <p className="text-[10px] text-center text-gray-600 mt-2 font-mono tracking-widest uppercase">
+                Powered by ThinkSwift
+            </p>
         </div>
     </div>
   );
