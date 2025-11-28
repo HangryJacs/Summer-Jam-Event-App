@@ -92,23 +92,6 @@ const Activations: React.FC<ActivationsProps> = ({ activations }) => {
           </div>
         ))}
       </div>
-      
-      {!activations.every(a => a.completed) && (
-        <div className="fixed bottom-24 left-1/2 -translate-x-1/2 w-full max-w-md px-0 z-40">
-           <Link to="/scanner">
-             <div className="relative group cursor-pointer mx-4">
-                <div className="absolute inset-0 bg-[#FF4C29] blur-lg opacity-40 group-hover:opacity-60 transition-opacity"></div>
-                <Button 
-                    fullWidth 
-                    className="relative py-5 text-xl font-black italic uppercase tracking-widest bg-gradient-to-r from-[#FF7812] via-[#FFA605] to-[#FF4C29] border-none clip-path-slant shadow-xl"
-                    style={{ clipPath: 'polygon(10px 0, 100% 0, 100% calc(100% - 10px), calc(100% - 10px) 100%, 0 100%, 0 10px)' }}
-                >
-                   Open Scanner
-                </Button>
-             </div>
-           </Link>
-        </div>
-      )}
 
     </div>
   );
