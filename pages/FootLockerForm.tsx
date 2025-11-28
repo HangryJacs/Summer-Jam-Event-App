@@ -1,16 +1,24 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { ChevronLeft, ChevronRight, Star, Trophy, CheckCircle2 } from 'lucide-react';
 import Button from '../components/Button';
 import toast from 'react-hot-toast';
 import confetti from 'canvas-confetti';
-import { UserData } from '../types';
+import { useUser } from '../context/UserContext';
 
 const FootLockerForm: React.FC = () => {
   const navigate = useNavigate();
+  const { user, addEntries, markActivationCompleted, activations } = useUser();
   const [currentStep, setCurrentStep] = useState(0);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isCompleted, setIsCompleted] = useState(false);
+
+  useEffect(() => {
+    const activation = activations.find(a => a.id === 'footlocker');
+    if (activation?.completed) {
+      setIsCompleted(true);
+    }
+  }, [activations]);
 
   // Form State
   const [formData, setFormData] = useState({
@@ -81,17 +89,8 @@ const FootLockerForm: React.FC = () => {
     
     // Simulate API call and LocalStorage update
     setTimeout(() => {
-      const storedUser = localStorage.getItem('summerjam_user');
-      if (storedUser) {
-        const user: UserData = JSON.parse(storedUser);
-        // Add 10 entries (assuming user has an entries field, otherwise init it)
-        const currentEntries = (user as any).entries || 0;
-        const updatedUser = { ...user, entries: currentEntries + 10 };
-        localStorage.setItem('summerjam_user', JSON.stringify(updatedUser));
-        
-        // Trigger generic storage event so other components might update if they listen
-        window.dispatchEvent(new Event('storage'));
-      }
+      addEntries(10);
+      markActivationCompleted('footlocker');
 
       setIsSubmitting(false);
       setIsCompleted(true);

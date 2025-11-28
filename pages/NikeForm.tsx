@@ -7,11 +7,18 @@ import SuccessAnimation from '../components/SuccessAnimation';
 
 const NikeForm: React.FC = () => {
   const navigate = useNavigate();
-  const { user, addEntries, markActivationCompleted } = useUser();
+  const { user, addEntries, markActivationCompleted, activations } = useUser();
   const [currentStep, setCurrentStep] = useState(0);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [showSuccess, setShowSuccess] = useState(false);
   const [totalEntries, setTotalEntries] = useState(0);
+
+  useEffect(() => {
+    const activation = activations.find(a => a.id === 'nike');
+    if (activation?.completed) {
+      setShowSuccess(true);
+    }
+  }, [activations]);
 
   // Form State
   const [formData, setFormData] = useState({

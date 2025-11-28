@@ -1,15 +1,23 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { ChevronLeft, Star, Heart, Sparkles, Sun, XCircle, Palette } from 'lucide-react';
 import Button from '../components/Button';
 import confetti from 'canvas-confetti';
-import { UserData } from '../types';
+import { useUser } from '../context/UserContext';
 
 const MaybellineForm: React.FC = () => {
   const navigate = useNavigate();
+  const { user, addEntries, markActivationCompleted, activations } = useUser();
   const [currentStep, setCurrentStep] = useState(0);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isCompleted, setIsCompleted] = useState(false);
+
+  useEffect(() => {
+    const activation = activations.find(a => a.id === 'maybelline');
+    if (activation?.completed) {
+      setIsCompleted(true);
+    }
+  }, [activations]);
 
   // Form State
   const [formData, setFormData] = useState({
@@ -44,14 +52,8 @@ const MaybellineForm: React.FC = () => {
     
     // Simulate API call and LocalStorage update
     setTimeout(() => {
-      const storedUser = localStorage.getItem('summerjam_user');
-      if (storedUser) {
-        const user: UserData = JSON.parse(storedUser);
-        const currentEntries = (user as any).entries || 0;
-        const updatedUser = { ...user, entries: currentEntries + 10 };
-        localStorage.setItem('summerjam_user', JSON.stringify(updatedUser));
-        window.dispatchEvent(new Event('storage'));
-      }
+      addEntries(10);
+      markActivationCompleted('maybelline');
 
       setIsSubmitting(false);
       setIsCompleted(true);
