@@ -114,9 +114,9 @@ const Schedule: React.FC = () => {
   return (
     <div className="min-h-screen bg-[#0A0A0A] pb-24">
       {/* 1. Header & Filters */}
-      <div className="sticky top-16 z-30 bg-[#0A0A0A]/95 backdrop-blur-md border-b border-white/5 pb-2">
-        <div className="px-6 pt-6 pb-2">
-          <h1 className="text-3xl font-black italic uppercase text-white mb-4">Event Schedule</h1>
+      <div className="relative z-30 bg-[#0A0A0A] border-b border-white/5 pb-4 pt-2">
+        <div className="px-6 pt-4">
+          <h1 className="text-4xl font-black italic uppercase text-white mb-6 tracking-tighter">Event Schedule</h1>
           
           <div className="flex gap-2 overflow-x-auto no-scrollbar pb-2">
             {CITIES.map(city => (
