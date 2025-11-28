@@ -166,7 +166,7 @@ const Schedule: React.FC = () => {
               {events.map((event, index) => {
                 const style = getEventStyle(event.type);
                 return (
-                  <div key={event.id} className="relative pl-8 py-4 first:pt-2 last:pb-2 group">
+                  <div key={event.id} className="relative pl-8 pr-4 py-4 first:pt-4 last:pb-2 group">
                     {/* Timeline Dot */}
                     <div className={`
                         absolute left-[-5px] top-6 w-3 h-3 rounded-full border-2 bg-[#0A0A0A] z-10 transition-colors
