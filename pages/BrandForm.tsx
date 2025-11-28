@@ -37,16 +37,16 @@ const BrandForm: React.FC = () => {
   }
 
   return (
-    <div className="min-h-screen bg-[#0A0A0A] pb-24">
+    <div className="h-full bg-[#0A0A0A] pb-24 flex flex-col">
       {/* Header */}
-      <div className="bg-[#121212] border-b border-white/5 p-4 sticky top-0 z-10 flex items-center gap-4">
+      <div className="bg-[#121212] border-b border-white/5 p-4 sticky top-0 z-10 flex items-center gap-4 flex-shrink-0">
          <button onClick={() => navigate('/scanner')} className="p-2 -ml-2 text-gray-400 hover:text-white">
             <ChevronLeft />
          </button>
          <h1 className="text-lg font-black italic uppercase text-white tracking-wide">{title} Check-In</h1>
       </div>
 
-      <div className="p-6">
+      <div className="p-6 flex-grow overflow-y-auto">
         <form onSubmit={handleSubmit} className="space-y-6">
            <div className="bg-[#1A1A1A] p-6 rounded-xl border border-white/5 text-center mb-8">
               <p className="text-[#FFA605] font-bold uppercase text-xs tracking-widest mb-2">Prize Multiplier</p>

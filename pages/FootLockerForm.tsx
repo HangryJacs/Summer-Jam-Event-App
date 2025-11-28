@@ -294,10 +294,10 @@ const FootLockerForm: React.FC = () => {
 
   // ---------------- MAIN RENDER ----------------
   return (
-    <div className="min-h-screen bg-[#0A0A0A] text-white flex flex-col">
+    <div className="h-full bg-[#0A0A0A] text-white flex flex-col">
       
       {/* Header */}
-      <div className="h-16 flex items-center justify-between px-4 border-b border-white/5 bg-[#0A0A0A]/90 backdrop-blur-md sticky top-0 z-20">
+      <div className="h-16 flex items-center justify-between px-4 border-b border-white/5 bg-[#0A0A0A]/90 backdrop-blur-md sticky top-0 z-20 flex-shrink-0">
         <button onClick={handlePrev} className="p-2 -ml-2 text-gray-400 hover:text-white">
           <ChevronLeft size={24} />
         </button>
@@ -309,7 +309,7 @@ const FootLockerForm: React.FC = () => {
       </div>
 
       {/* Progress Bar */}
-      <div className="w-full h-1 bg-gray-900">
+      <div className="w-full h-1 bg-gray-900 flex-shrink-0">
         <div 
           className="h-full bg-[#FF7812] transition-all duration-300 ease-out"
           style={{ width: `${((currentStep + 1) / totalSteps) * 100}%` }}
@@ -317,12 +317,12 @@ const FootLockerForm: React.FC = () => {
       </div>
 
       {/* Content */}
-      <div className="flex-grow flex flex-col justify-between p-6 pb-safe">
+      <div className="flex-grow flex flex-col justify-between p-6 pb-safe overflow-y-auto">
         <div className="mt-4">
            {renderStep()}
         </div>
 
-        <div className="mt-8 pt-6 border-t border-white/5">
+        <div className="mt-8 pt-6 border-t border-white/5 flex-shrink-0">
           <Button 
             fullWidth 
             onClick={handleNext}

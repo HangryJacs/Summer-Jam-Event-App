@@ -156,7 +156,7 @@ const EntrySurvey: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen bg-[#0A0A0A] text-white flex flex-col">
+    <div className="h-full bg-[#0A0A0A] text-white flex flex-col">
       <SuccessAnimation 
         isVisible={showSuccess}
         entriesEarned={5}
@@ -165,7 +165,7 @@ const EntrySurvey: React.FC = () => {
         onBackHome={() => navigate('/home')}
       />
 
-      <div className="h-16 flex items-center justify-between px-4 border-b border-white/5 bg-[#0A0A0A]/90 backdrop-blur-md sticky top-0 z-20">
+      <div className="h-16 flex items-center justify-between px-4 border-b border-white/5 bg-[#0A0A0A]/90 backdrop-blur-md sticky top-0 z-20 flex-shrink-0">
         <button onClick={handlePrev} className="p-2 -ml-2 text-gray-400 hover:text-white">
           <ChevronLeft size={24} />
         </button>
@@ -176,19 +176,19 @@ const EntrySurvey: React.FC = () => {
         <div className="w-8"></div>
       </div>
 
-      <div className="w-full h-1 bg-gray-900">
+      <div className="w-full h-1 bg-gray-900 flex-shrink-0">
         <div 
           className="h-full bg-[#00A89E] transition-all duration-300 ease-out"
           style={{ width: `${((currentStep + 1) / totalSteps) * 100}%` }}
         ></div>
       </div>
 
-      <div className="flex-grow flex flex-col justify-between p-6 pb-safe">
+      <div className="flex-grow flex flex-col justify-between p-6 pb-safe overflow-y-auto">
         <div className="mt-4">
            {renderStep()}
         </div>
 
-        <div className="mt-8 pt-6 border-t border-white/5">
+        <div className="mt-8 pt-6 border-t border-white/5 flex-shrink-0">
           <Button 
             fullWidth 
             onClick={handleNext}
