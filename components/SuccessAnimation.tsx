@@ -72,7 +72,7 @@ const SuccessAnimation: React.FC<SuccessAnimationProps> = ({
   if (!isVisible) return null;
 
   return (
-    <div className="fixed inset-0 z-[100] flex items-center justify-center overflow-hidden">
+    <div className="fixed top-0 left-1/2 -translate-x-1/2 w-full max-w-md h-full z-[100] flex items-center justify-center overflow-hidden">
       {/* 1. Dark Overlay */}
       <div className="absolute inset-0 bg-[#0A0A0A]/95 backdrop-blur-md animate-in fade-in duration-300"></div>
 

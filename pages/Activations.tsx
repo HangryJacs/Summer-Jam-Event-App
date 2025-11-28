@@ -92,7 +92,7 @@ const Activations: React.FC<ActivationsProps> = ({ activations }) => {
       </div>
       
       {!activations.every(a => a.completed) && (
-        <div className="fixed bottom-24 left-4 right-4 z-40">
+        <div className="fixed bottom-24 left-1/2 -translate-x-1/2 w-full max-w-md px-4 z-40">
            <Link to="/scanner">
              <Button fullWidth className="shadow-2xl shadow-orange-500/20">
                Open Scanner

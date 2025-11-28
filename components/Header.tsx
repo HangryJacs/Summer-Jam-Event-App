@@ -9,7 +9,7 @@ interface HeaderProps {
 
 const Header: React.FC<HeaderProps> = ({ user }) => {
   return (
-    <header className="absolute top-0 left-0 right-0 z-50 h-16 flex items-center justify-between px-4 bg-[#0A0A0A]/90 backdrop-blur-md border-b border-white/5">
+    <header className="fixed top-0 left-1/2 -translate-x-1/2 w-full max-w-md z-50 h-16 flex items-center justify-between px-4 bg-[#0A0A0A]/90 backdrop-blur-md border-b border-white/5">
       <Link to="/home" className="flex items-center gap-2 group">
         {/* Logo Icon */}
         <div className="w-8 h-8 bg-gradient-to-br from-[#FF7812] to-[#FF4C29] rounded-lg flex items-center justify-center transform rotate-3 shadow-[0_4px_15px_rgba(255,120,18,0.3)] group-hover:rotate-6 transition-transform">

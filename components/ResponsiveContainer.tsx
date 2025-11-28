@@ -14,10 +14,10 @@ const ResponsiveContainer: React.FC<ResponsiveContainerProps> = ({
   hasHeader = false
 }) => {
   return (
-    <div className="min-h-screen w-full flex justify-center bg-[#050505] overflow-x-hidden">
+    <div className="min-h-[100dvh] w-full flex justify-center bg-[#050505] overflow-x-hidden">
       <div 
         className={`
-          w-full max-w-md bg-[#0A0A0A] min-h-screen relative shadow-2xl overflow-x-hidden
+          w-full max-w-md bg-[#0A0A0A] min-h-[100dvh] relative shadow-2xl overflow-x-hidden
           ${hasNav ? 'pb-24' : ''} 
           ${hasHeader ? 'pt-16' : ''}
           ${className}

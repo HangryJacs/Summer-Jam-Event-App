@@ -12,7 +12,7 @@ const Navigation: React.FC = () => {
   ];
 
   return (
-    <nav className="fixed bottom-0 left-0 right-0 bg-[#0A0A0A]/95 backdrop-blur-md border-t border-white/10 z-50 pb-safe">
+    <nav className="fixed bottom-0 left-1/2 -translate-x-1/2 w-full max-w-md bg-[#0A0A0A]/95 backdrop-blur-md border-t border-white/10 z-50 pb-safe">
       <div className="flex justify-around items-end h-20 pb-4 px-2">
         {navItems.map((item) => (
           <NavLink

@@ -12,7 +12,7 @@ const LoadingSpinner: React.FC<LoadingSpinnerProps> = ({
   fullScreen = true 
 }) => {
   const containerClasses = fullScreen 
-    ? "fixed inset-0 z-50 bg-[#0A0A0A] flex flex-col items-center justify-center"
+    ? "fixed top-0 left-1/2 -translate-x-1/2 w-full max-w-md h-full z-50 bg-[#0A0A0A] flex flex-col items-center justify-center"
     : "flex flex-col items-center justify-center p-8";
 
   return (
