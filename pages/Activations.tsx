@@ -81,8 +81,10 @@ const Activations: React.FC<ActivationsProps> = ({ activations }) => {
                             <PlayCircle size={14} /> Demo
                         </button>
                     </Link>
-                    <Link to="/scanner">
-                        <Button variant="outline" className="text-xs py-2 px-3">Scan</Button>
+                    <Link to={`/form/${activation.id}`}>
+                        <Button variant="outline" className="text-xs py-2 px-4 border-[#FF7812] text-[#FF7812] hover:bg-[#FF7812] hover:text-white transition-all shadow-[0_0_10px_rgba(255,120,18,0.2)]">
+                            Scan
+                        </Button>
                     </Link>
                  </div>
                )}
@@ -92,11 +94,18 @@ const Activations: React.FC<ActivationsProps> = ({ activations }) => {
       </div>
       
       {!activations.every(a => a.completed) && (
-        <div className="fixed bottom-24 left-1/2 -translate-x-1/2 w-full max-w-md px-4 z-40">
+        <div className="fixed bottom-24 left-1/2 -translate-x-1/2 w-full max-w-md px-0 z-40">
            <Link to="/scanner">
-             <Button fullWidth className="shadow-2xl shadow-orange-500/20">
-               Open Scanner
-             </Button>
+             <div className="relative group cursor-pointer mx-4">
+                <div className="absolute inset-0 bg-[#FF4C29] blur-lg opacity-40 group-hover:opacity-60 transition-opacity"></div>
+                <Button 
+                    fullWidth 
+                    className="relative py-5 text-xl font-black italic uppercase tracking-widest bg-gradient-to-r from-[#FF7812] via-[#FFA605] to-[#FF4C29] border-none clip-path-slant shadow-xl"
+                    style={{ clipPath: 'polygon(10px 0, 100% 0, 100% calc(100% - 10px), calc(100% - 10px) 100%, 0 100%, 0 10px)' }}
+                >
+                   Open Scanner
+                </Button>
+             </div>
            </Link>
         </div>
       )}

@@ -7,7 +7,7 @@ const Navigation: React.FC = () => {
     { to: '/home', icon: Home, label: 'Home' },
     { to: '/schedule', icon: Calendar, label: 'Schedule' },
     { to: '/scanner', icon: QrCode, label: 'Scan', isPrimary: true },
-    { to: '/activations', icon: Handshake, label: 'Partners' },
+    { to: '/activations', icon: Handshake, label: 'Drops' },
     { to: '/profile', icon: User, label: 'Profile' },
   ];
 
