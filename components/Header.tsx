@@ -13,11 +13,15 @@ const Header: React.FC<HeaderProps> = ({ user }) => {
       <Link to="/home" className="flex items-center gap-2 group">
         {/* Logo Icon */}
         <div className="w-8 h-8 bg-gradient-to-br from-[#FF7812] to-[#FF4C29] rounded-lg flex items-center justify-center transform rotate-3 shadow-[0_4px_15px_rgba(255,120,18,0.3)] group-hover:rotate-6 transition-transform">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
-            <path d="M12 2a10 10 0 1 0 10 10 4 4 0 0 1-5-5 4 4 0 0 1-5-5" />
-            <path d="M8.5 8.5v.01" />
-            <path d="M16 16v.01" />
-            <path d="M12 12v.01" />
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+            {/* Crown */}
+            <path d="M7 7L10 4L12 6L14 4L17 7" />
+            {/* Net Body */}
+            <path d="M7 7H17C17 7 18 14 12 20C6 14 7 7 7 7Z" />
+            {/* Net Lines */}
+            <path d="M10 7L14 16" />
+            <path d="M14 7L10 16" />
+            <path d="M7 11H17" />
           </svg>
         </div>
         
