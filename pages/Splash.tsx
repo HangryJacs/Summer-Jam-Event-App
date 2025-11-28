@@ -6,7 +6,7 @@ const Splash: React.FC = () => {
   const navigate = useNavigate();
 
   return (
-    <div className="relative w-full h-screen overflow-hidden bg-[#0A0A0A] flex flex-col items-center justify-center">
+    <div className="relative w-full h-[100dvh] overflow-hidden bg-[#0A0A0A] flex flex-col items-center justify-center">
       {/* Background Heat Effects */}
       <div className="absolute inset-0 z-0">
         <div className="absolute top-[-20%] left-[-20%] w-[140%] h-[140%] bg-gradient-to-br from-[#FF7812] via-[#FF4C29] to-[#FFA605] opacity-20 blur-[100px] animate-pulse-slow"></div>
