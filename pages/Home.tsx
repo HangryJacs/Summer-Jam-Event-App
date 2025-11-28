@@ -157,21 +157,24 @@ const Home: React.FC = () => {
         </Link>
       </section>
 
-      {/* 3. QUICK ACTIONS GRID */}
+      {/* 3. ABOUT SUMMER JAM */}
       <section className="px-4">
-         <h2 className="text-sm font-bold uppercase tracking-wider text-gray-500 mb-3 ml-1">Quick Actions</h2>
-         <div className="grid grid-cols-2 gap-3">
-            {quickActions.map((action, idx) => (
-               <Link to={action.to} key={idx}>
-                  <div className="bg-[#1A1A1A] border border-white/5 hover:border-white/20 rounded-xl p-4 flex flex-col items-center justify-center gap-2 transition-all active:scale-95">
-                     <div className={`p-3 bg-white/5 rounded-full ${action.color}`}>
-                        <action.icon size={24} />
-                     </div>
-                     <span className="text-xs font-bold uppercase tracking-wide text-gray-300">{action.label}</span>
+         <Link to="/about">
+            <Card className="bg-[#1A1A1A] border border-white/5 hover:border-white/20 p-6 flex items-center justify-between group transition-all active:scale-95">
+               <div className="flex items-center gap-4">
+                  <div className="w-12 h-12 bg-white/5 rounded-full flex items-center justify-center text-[#FFA605]">
+                     <Flame size={24} />
                   </div>
-               </Link>
-            ))}
-         </div>
+                  <div>
+                     <h3 className="text-lg font-black italic uppercase text-white leading-none mb-1">About The Jam</h3>
+                     <p className="text-xs text-gray-400 font-medium">Learn more about the event & rules</p>
+                  </div>
+               </div>
+               <div className="w-8 h-8 rounded-full bg-white/5 flex items-center justify-center group-hover:bg-[#FF7812] transition-colors">
+                  <Play size={14} className="text-gray-400 group-hover:text-white ml-0.5" fill="currentColor" />
+               </div>
+            </Card>
+         </Link>
       </section>
 
       {/* 4. LIVE FEED */}
