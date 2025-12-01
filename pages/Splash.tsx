@@ -33,7 +33,7 @@ const Splash: React.FC = () => {
             <div className="mb-16 space-y-4">
             <p className="text-[#FFA605] font-bold tracking-[0.2em] uppercase text-xs animate-pulse flex items-center justify-center gap-2">
                 <span className="w-2 h-2 bg-[#FF4C29] rounded-full"></span>
-                Presented 8 October 2025
+                Presented 1 December 2025
                 <span className="w-2 h-2 bg-[#FF4C29] rounded-full"></span>
             </p>
             <p className="text-white font-black italic uppercase text-2xl leading-none drop-shadow-lg">
