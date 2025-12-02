@@ -37,6 +37,7 @@ import ExitSurvey from './pages/ExitSurvey';
 
 // Constants
 import { ROUTES } from './constants';
+import { ensureGtagStub, sendPageView } from './helpers/analytics';
 
 const ScrollToTop = () => {
   const { pathname } = useLocation();
@@ -121,6 +122,15 @@ const AppContent: React.FC = () => {
   const handleLogin = (userData: any) => {
     login(userData);
   };
+
+  useEffect(() => {
+    ensureGtagStub();
+  }, []);
+
+  useEffect(() => {
+    ensureGtagStub();
+    sendPageView(`${location.pathname}${location.search}`);
+  }, [location.pathname, location.search]);
 
   return (
     <>
